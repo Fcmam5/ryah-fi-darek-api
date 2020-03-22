@@ -1,0 +1,39 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:sonarjs/recommended",
+    "plugin:security/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "sonarjs",
+    "security"
+  ],
+  "rules": {
+    "no-underscore-dangle": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/test/**/*.test.js"
+      ],
+      "rules": {
+        "global-require": "off"
+      }
+    }
+  ]
+}

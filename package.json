@@ -1,0 +1,66 @@
+{
+  "name": "ryah-fi-darek",
+  "version": "0.0.1",
+  "description": "API providing resources, tips & tricks while staying at home (#DZ Context)",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/bin/www.js",
+    "start.dev": "nodemon src/bin/www.js | bunyan",
+    "test": "jest",
+    "test.watch": "jest --watchAll",
+    "test.coverage": "jest --coverage",
+    "test.ci": "jest --ci --runInBand",
+    "lint": "eslint .",
+    "lint.fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fcmam5/warid.git"
+  },
+  "author": "Abdeldjalil Fortas (https://fcmam5.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fcmam5/warid/issues"
+  },
+  "homepage": "https://github.com/Fcmam5/warid#readme",
+  "devDependencies": {
+    "@stryker-mutator/core": "3.0.2",
+    "@stryker-mutator/javascript-mutator": "3.0.2",
+    "@stryker-mutator/jest-runner": "3.0.2",
+    "@types/jest": "25.1.4",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-sonarjs": "0.5.0",
+    "husky": "4.2.3",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.8",
+    "nodemon": "2.0.2",
+    "prettier": "2.0.1"
+  },
+  "dependencies": {
+    "@hapi/boom": "9.1.0",
+    "@hapi/joi": "17.1.1",
+    "body-parser": "1.19.0",
+    "bunyan": "1.8.12",
+    "config": "3.3.0",
+    "express": "4.17.1",
+    "helmet": "3.21.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run lint && npm run test.coverage"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,ts}": [
+      "prettier --write",
+      "eslint . --fix-dry-run",
+      "git add"
+    ]
+  }
+}

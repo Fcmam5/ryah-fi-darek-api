@@ -7,7 +7,7 @@ const http = require('http');
 const express = require('express');
 const config = require('config');
 const logger = require('../lib/logger')(__filename);
-const app = require('../app')(express());
+const app = require('../app')(express);
 
 const port = config.get('server.port') || 3000;
 
@@ -69,9 +69,14 @@ server.on('listening', onHttpListening);
 /**
  * Graceful shutdown
  */
-const onSignal = (eventType, exitCode = 1) => () => {
-  logger.warn(`Received ${eventType} signal, starting cleanup`);
-  return [eventType, process.exit(exitCode)];
+const onSignal = (eventType, exitCode = 1) => {
+  return [
+    eventType,
+    () => {
+      logger.warn(`Received ${eventType} signal, starting cleanup`);
+      process.exit(exitCode);
+    },
+  ];
 };
 
 process.on(...onSignal('uncaughtException'));

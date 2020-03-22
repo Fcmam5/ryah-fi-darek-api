@@ -1,20 +1,12 @@
 /* eslint-disable no-console */
+const config = require('config');
 const Joi = require('@hapi/joi');
 const data = require('./data.json');
 
 // Define data schema
-const CATEGORIES = ['kids', 'sport', 'education', 'art', 'languages', 'other'];
-const SUPPORTED_LANGUAGES = ['ar', 'kab', 'en', 'fr', 'any'];
-const SUPPORTED_TYPES = [
-  'mobileApp',
-  'video',
-  'ebook',
-  'article',
-  'website',
-  'page',
-  'game',
-  'other',
-];
+const CATEGORIES = config.get('contentDefaults.CATEGORIES');
+const SUPPORTED_LANGUAGES = config.get('contentDefaults.SUPPORTED_LANGUAGES');
+const SUPPORTED_TYPES = config.get('contentDefaults.SUPPORTED_TYPES');
 
 const defsSchema = Joi.array().items(
   Joi.object({

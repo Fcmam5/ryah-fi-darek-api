@@ -1,5 +1,19 @@
 {
   "server": {
     "port": 3000
+  },
+  "contentDefaults": {
+    "CATEGORIES": ["kids", "sport", "education", "art", "languages", "other"],
+    "SUPPORTED_LANGUAGES": ["ar", "kab", "en", "fr", "any"],
+    "SUPPORTED_TYPES": [
+      "mobileApp",
+      "video",
+      "ebook",
+      "article",
+      "website",
+      "page",
+      "game",
+      "other"
+    ]
   }
 }

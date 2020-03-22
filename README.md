@@ -64,6 +64,22 @@ Collection of helpful (and ideally fun-to-follow) resources from trusted sources
 
 Collection of quotes and things to post on social media to encourage people to stay at home.
 
+## Contribution
+
+### 1. Adding new resources:
+
+0. Fork [this repo](https://github.com/Fcmam5/ryah-fi-darek-api)
+1. Edit [data/data.json](./data/data.json)
+2.
+
+## Development
+
+To run the server in development mode run `npm run start.dev`.
+
+**Tests** Run Jest runner by executing `npm test` or `npm run test.watch` for watch mode.
+
+**Validate data** `npm run validate-data`.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details

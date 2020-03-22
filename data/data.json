@@ -1,0 +1,13 @@
+{
+  "kids": [],
+  "sport": [],
+  "education": [],
+  "art": [],
+  "languages": [
+    {
+      "title": "Duolingo",
+      "link": "https://www.duolingo.com/",
+      "type": "mobileApp"
+    }
+  ]
+}

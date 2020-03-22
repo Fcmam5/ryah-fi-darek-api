@@ -11,18 +11,19 @@
     "test.coverage": "jest --coverage",
     "test.ci": "jest --ci --runInBand",
     "lint": "eslint .",
-    "lint.fix": "eslint . --fix"
+    "lint.fix": "eslint . --fix",
+    "validate-data": "node data/validate.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fcmam5/warid.git"
+    "url": "git+https://github.com/Fcmam5/ryah-fi-darek-api.git"
   },
   "author": "Abdeldjalil Fortas (https://fcmam5.me)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Fcmam5/warid/issues"
+    "url": "https://github.com/Fcmam5/ryah-fi-darek-api/issues"
   },
-  "homepage": "https://github.com/Fcmam5/warid#readme",
+  "homepage": "https://github.com/Fcmam5/ryah-fi-darek-api#readme",
   "devDependencies": {
     "@stryker-mutator/core": "3.0.2",
     "@stryker-mutator/javascript-mutator": "3.0.2",
@@ -49,6 +50,7 @@
     "bunyan": "1.8.12",
     "config": "3.3.0",
     "express": "4.17.1",
+    "express-presenter": "0.0.2",
     "helmet": "3.21.3"
   },
   "husky": {

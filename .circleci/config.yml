@@ -1,0 +1,32 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/ryah-fi-darek
+    docker:
+      - image: circleci/node:10.16.3
+      # - image: mongo:4.2.0
+    steps: # a collection of executable commands
+      - checkout
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Run ESlint
+          command: npm run lint
+      - run:
+          name: Validate Data schema
+          command: npm run validate-data
+      - run: # run tests
+          name: Run unit-tests
+          command: npm run test.ci
+      - store_artifacts:
+          path: coverage
+      - store_test_results:
+          path: coverage

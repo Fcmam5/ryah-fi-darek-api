@@ -7,14 +7,8 @@ const SUPPORTED_LANGUAGES = config.get('contentDefaults.SUPPORTED_LANGUAGES');
 const SUPPORTED_TYPES = config.get('contentDefaults.SUPPORTED_TYPES');
 
 const getListSchema = joi.object({
-  lang: joi
-    .string()
-    .valid(...SUPPORTED_LANGUAGES)
-    .default('any'),
-  type: joi
-    .string()
-    .valid(...SUPPORTED_TYPES)
-    .default('any'),
+  lang: joi.string().valid(...SUPPORTED_LANGUAGES),
+  type: joi.string().valid(...SUPPORTED_TYPES),
 });
 
 const validateGetListRequest = (data) =>

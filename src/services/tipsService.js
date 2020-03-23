@@ -3,11 +3,11 @@ const data = require('../../data/data.json');
 
 const CATEGORIES = config.get('contentDefaults.CATEGORIES');
 
-const _hasLangage = (lang = 'any') => ({ language }) =>
-  language === 'any' || language === lang;
+const _hasLanguage = (givenLang) => ({ language }) =>
+  givenLang && language ? language === givenLang || language === 'any' : true;
 
 const _hasType = (givenType) => ({ type }) =>
-  type ? type === givenType : true;
+  givenType ? type === givenType : true;
 
 /**
  * Get a content
@@ -18,7 +18,7 @@ const _hasType = (givenType) => ({ type }) =>
  */
 const getTipsList = (language, type) => {
   if (language || type) {
-    const _filterByLanguage = _hasLangage(language);
+    const _filterByLanguage = _hasLanguage(language);
     const _filterByType = _hasType(type);
 
     return CATEGORIES.reduce((acc, category) => {

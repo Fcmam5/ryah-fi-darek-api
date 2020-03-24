@@ -70,7 +70,7 @@ Collection of quotes and things to post on social media to encourage people to s
 
 0. Fork [this repo](https://github.com/Fcmam5/ryah-fi-darek-api)
 1. Edit [data/data.json](./data/data.json)
-2.
+2. Run `npm run validate-data` to make sure that the data you entered has a valid format
 
 ## Development
 

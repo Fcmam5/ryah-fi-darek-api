@@ -2,6 +2,8 @@
   <h1>ريّح في دارك</h1>
 </div>
 
+[![CircleCI](https://circleci.com/gh/Fcmam5/ryah-fi-darek-api.svg?style=svg)](https://circleci.com/gh/Fcmam5/ryah-fi-darek-api) [![Known Vulnerabilities](https://snyk.io/test/github/Fcmam5/ryah-fi-darek-api/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Fcmam5/ryah-fi-darek-api?targetFile=package.json)
+
 API for encouraging Algerians to stay at home during COVID-19 pandemic.
 
 We will expose some ideas, advices and helpful resources to encourage people to stay at home

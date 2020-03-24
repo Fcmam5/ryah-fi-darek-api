@@ -17,4 +17,3 @@ const validateGetListRequest = (data) =>
 module.exports = {
   validateGetListRequest,
 };
-// module.exports;
